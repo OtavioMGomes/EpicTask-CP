@@ -1,6 +1,5 @@
 package br.com.fiap.epictaskapi.config;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import br.com.fiap.epictaskapi.model.Role;
 import br.com.fiap.epictaskapi.model.Task;
 import br.com.fiap.epictaskapi.model.User;
 import br.com.fiap.epictaskapi.repository.RoleRepository;
@@ -52,23 +50,12 @@ public class DatabaseSeed implements CommandLineRunner {
         //         .password(passwordEncoder.encode("123"))
         // ));
 
-        roleRepository.saveAll(List.of(
-            new Role("ADMIN")
-        ));
-
         userRepository.saveAll(List.of(
             new User("Joao", "joao@fiap.com.br", passwordEncoder.encode("123")),
             new User("Marcos", "marcos@fiap.com.br", passwordEncoder.encode("456")),
             new User("Julia", "julia@fiap.com.br", passwordEncoder.encode("789")),
-            new User("Admin", "admin@fiap.com.br", passwordEncoder.encode("admin"))
+            new User("Admin", "admin@fiap.com.br", passwordEncoder.encode("administrador"))
         ));
-
-        User admin = userRepository.findById(4l).get();
-        Role adminRole = roleRepository.findById(1l).get();
-        List<Role> roles = new ArrayList<>();
-        roles.add(adminRole);
-        admin.setRoles(roles);
-        userRepository.save(admin);
         
     }
     

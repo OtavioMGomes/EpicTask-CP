@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("{id}")
-    @Cacheable("User")
+    @Cacheable("user")
     public ResponseEntity<User> show(@PathVariable Long id){
         return ResponseEntity.of( service.getById(id) );   
     }
