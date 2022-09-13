@@ -1,12 +1,12 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-09-13T20:21:56.192Z",
+    "__export_date": "2022-09-13T20:40:08.372Z",
     "__export_source": "insomnia.desktop.app:v2022.5.1",
     "resources": [{
         "_id": "req_1f44e8024cdb4e4883770ab5e48c9f5d",
         "parentId": "fld_f94c1f939d5e4800bf1e278c439b02dd",
-        "modified": 1663099624743,
+        "modified": 1663101534949,
         "created": 1660103112577,
         "url": "localhost:8080/api/task",
         "name": "Create new Task",
@@ -83,9 +83,9 @@
     }, {
         "_id": "req_e6736c1f47894a47abe2566f4f5892bd",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663045081994,
+        "modified": 1663101542789,
         "created": 1663043868546,
-        "url": "localhost:8080/api/user",
+        "url": "{{ _.base_url }}/user",
         "name": "List All",
         "description": "",
         "method": "GET",
@@ -116,9 +116,9 @@
     }, {
         "_id": "req_50bcb2c4d4c6412eb70f675a37e18e35",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663100280766,
+        "modified": 1663101564747,
         "created": 1663044305892,
-        "url": "localhost:8080/api/user/4",
+        "url": "{{ _.base_url }}/user/4",
         "name": "Find By Id",
         "description": "",
         "method": "GET",
@@ -138,9 +138,9 @@
     }, {
         "_id": "req_a8cf71e10a974517b63ee7f77e877647",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663100203293,
+        "modified": 1663101559083,
         "created": 1663100200827,
-        "url": "localhost:8080/api/user/5",
+        "url": "{{ _.base_url }}/user/5",
         "name": "Find By Id Created",
         "description": "",
         "method": "GET",
@@ -160,9 +160,9 @@
     }, {
         "_id": "req_7e73f09f79794debb1e0bb50ef0e421b",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663100449652,
+        "modified": 1663101568265,
         "created": 1663045183813,
-        "url": "localhost:8080/api/user",
+        "url": "{{ _.base_url }}/user",
         "name": "Create User",
         "description": "",
         "method": "POST",
@@ -189,9 +189,9 @@
     }, {
         "_id": "req_e1a0988bd5ea49daa16c900f51663434",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663100455261,
+        "modified": 1663101572340,
         "created": 1663047712970,
-        "url": "localhost:8080/api/user/5",
+        "url": "{{ _.base_url }}/user/5",
         "name": "Update User",
         "description": "",
         "method": "PUT",
@@ -224,9 +224,9 @@
     }, {
         "_id": "req_7eb9678372174f29a8b44e9a90e30b00",
         "parentId": "fld_f045c3c54d444253bd0fb2ad69249f27",
-        "modified": 1663100466027,
+        "modified": 1663101575447,
         "created": 1663047726217,
-        "url": "localhost:8080/api/user/5",
+        "url": "{{ _.base_url }}/user/5",
         "name": "Delete User",
         "description": "",
         "method": "DELETE",
@@ -252,11 +252,16 @@
     }, {
         "_id": "env_9cae8893e5d5b9596669011ed9f3f647ed219191",
         "parentId": "wrk_9b62c0c2d5c64ae1a5c6507c30145ddd",
-        "modified": 1660103333671,
+        "modified": 1663101508262,
         "created": 1660102782107,
         "name": "Base Environment",
-        "data": {},
-        "dataPropertyOrder": {},
+        "data": {
+            "base_url": "https://almanak-fiap.herokuapp.com/api",
+            "protocol": "https"
+        },
+        "dataPropertyOrder": {
+            "&": ["base_url", "protocol"]
+        },
         "color": null,
         "isPrivate": false,
         "metaSortKey": 1660102782108,
@@ -264,19 +269,19 @@
     }, {
         "_id": "jar_9cae8893e5d5b9596669011ed9f3f647ed219191",
         "parentId": "wrk_9b62c0c2d5c64ae1a5c6507c30145ddd",
-        "modified": 1663100464236,
+        "modified": 1663101215998,
         "created": 1660102782112,
         "name": "Default Jar",
         "cookies": [{
             "key": "JSESSIONID",
-            "value": "4EB8930433292F68F3E11A3EB174C945",
+            "value": "FC97D562F5DDB29B37DE594AC8FFB076",
             "domain": "localhost",
             "path": "/",
             "httpOnly": true,
             "hostOnly": true,
             "creation": "2022-08-30T22:51:26.462Z",
-            "lastAccessed": "2022-09-13T20:21:04.235Z",
-            "id": "724745616137535"
+            "lastAccessed": "2022-09-13T20:33:35.998Z",
+            "id": "07408299735155688"
         }],
         "_type": "cookie_jar"
     }, {
@@ -288,5 +293,39 @@
         "contents": "",
         "contentType": "yaml",
         "_type": "api_spec"
+    }, {
+        "_id": "env_9d5ecc4e6b234d4084694613746e2ba7",
+        "parentId": "env_9cae8893e5d5b9596669011ed9f3f647ed219191",
+        "modified": 1663101512257,
+        "created": 1663101448607,
+        "name": "LocalHost",
+        "data": {
+            "base_url": "localhost:8080/api",
+            "protocol": "https"
+        },
+        "dataPropertyOrder": {
+            "&": ["base_url", "protocol"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1663101448607,
+        "_type": "environment"
+    }, {
+        "_id": "env_6aa58d6c03734e52b1f9ff3db722904f",
+        "parentId": "env_9cae8893e5d5b9596669011ed9f3f647ed219191",
+        "modified": 1663101487929,
+        "created": 1663101457830,
+        "name": "Heroku",
+        "data": {
+            "base_url": "https://epictask-cp.herokuapp.com/api",
+            "protocol": "https"
+        },
+        "dataPropertyOrder": {
+            "&": ["base_url", "protocol"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1663101457830,
+        "_type": "environment"
     }]
 }
