@@ -16,6 +16,7 @@ public class SecurityConfiguration{
         http.httpBasic()
             .and()
             .authorizeHttpRequests()
+                .antMatchers(HttpMethod.GET, "/api/grupo/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/task/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/task").authenticated()
                 .antMatchers(HttpMethod.GET, "/api/user/**").permitAll()

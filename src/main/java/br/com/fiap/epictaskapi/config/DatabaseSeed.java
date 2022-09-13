@@ -7,8 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import br.com.fiap.epictaskapi.model.Grupo;
 import br.com.fiap.epictaskapi.model.Task;
 import br.com.fiap.epictaskapi.model.User;
+import br.com.fiap.epictaskapi.repository.GrupoRepository;
 import br.com.fiap.epictaskapi.repository.RoleRepository;
 import br.com.fiap.epictaskapi.repository.TaskRepository;
 import br.com.fiap.epictaskapi.repository.UserRepository;
@@ -25,6 +27,9 @@ public class DatabaseSeed implements CommandLineRunner {
     @Autowired
     RoleRepository roleRepository;
 
+    @Autowired
+    GrupoRepository grupoRepository;
+    
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -55,6 +60,16 @@ public class DatabaseSeed implements CommandLineRunner {
             new User("Marcos", "marcos@fiap.com.br", passwordEncoder.encode("456")),
             new User("Julia", "julia@fiap.com.br", passwordEncoder.encode("789")),
             new User("Admin", "admin@fiap.com.br", passwordEncoder.encode("administrador"))
+        ));
+
+
+        grupoRepository.saveAll(List.of(
+            new Grupo("89171", "Bianca Man Tchuin Chang Lee"),
+            new Grupo("89045", "Danilo Zequim de Moura"),
+            new Grupo("87087", "Eric Brianez Giannetti"),
+            new Grupo("86931", "Matheus Pismel de Jeronymo"),
+            new Grupo("87680", "Otavio de Magalhães Gomes"),
+            new Grupo("87149", "Zack Lorenzzo Corrêa")
         ));
         
     }
